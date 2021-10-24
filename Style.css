@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(20, 19, 19);
+}
+a:hover {
+  transition: all 0.4s linear;
+  color: white;
+  
+}
+ul {
+  list-style: none;
+}
+li {
+  display: inline-block;
+  font-size: 2rem;
+}
+.wrapeer {
+  width: 100%;
+  
+}
+header {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fbeacc;
+  box-shadow: -1px 15px 11px 2px rgba(0, 0, 0, 0.48);
+ 
+}
+.nav {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainContent {
+  width: 100%;
+  /* height: 100vh; */
+  background-image: url("https://cdn5.vectorstock.com/i/1000x1000/82/09/fast-food-menu-set-of-cartoon-background-vector-10208209.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: black;
+  opacity: 0.8;
+  margin-top: 150px;
+}
+
+.imgHolder {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 50px;
+  align-items: center;
+  margin-top: 80px;
+  /* padding-top: 10px; */
+
+  padding-bottom: 20px;
+  border: 4px #fbeacc;
+}
+
+.div1 {
+  align-items: center;
+  width: 30%;
+  /* border: 5px solid #E35154; */
+  /* margin-top: 10px; */
+  background: #fbeacc;
+  line-height: 50px;
+  /* margin: 5px; */
+  text-align: center;
+  border: 5px solid #e35154;
+  /* flex-direction: column; */
+  /* height: 150px; */
+}
+
+#searchIng {
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+ 
+}
+#searchIngDev {
+  padding-top: 20px;
+  /* size: 2rem; */
+}
+
+
+.div1 > img {
+
+
+display:flex;
+flex-wrap: wrap;
+margin: auto;
+align-items: center;
+width: 80%;
+
+}
+
+.div1:hover {
+
+/* width: 32%; */
+
+}
+
+#addBtn {
+    font-size: 4.5rem;
+    border: 1px solid #fbeacc;
+}
+
+.hideDiv {
+    display: none;
+}
+#infoImg {
+ 
+   width: 100%;
+   border: 1px solid #fbeacc;
+   /* background-color:#fbeacc ; */
+
+}
+
+.infoDev {
+ width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+    
+    
+    
+
+}
+.h1Info{
+ 
+   
+    display: inline;
+    background-color:#fbeacc ;
+    border: 3px solid #e35154;
+    color: rgb(43, 43, 43);
+    width: 50%;
+    padding: auto;
+
+}
+.infoPar{
+    background-color:#fbeacc ;
+    border: 3px solid #e35154;
+    display: inline-block;
+    color: rgb(43, 43, 43);
+    width: 50%;
+    font-size: 2.5rem;
+    padding: auto;
+
+}
+
+.extraImg {
+
+    width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 50px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.extraImg > img {
+
+width: 30%;
+height: 40%;
+border: 3px solid #e35154;
+}
