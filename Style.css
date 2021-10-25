@@ -11,7 +11,6 @@ a {
 a:hover {
   transition: all 0.4s linear;
   color: white;
-  
 }
 ul {
   list-style: none;
@@ -22,7 +21,6 @@ li {
 }
 .wrapeer {
   width: 100%;
-  
 }
 header {
   width: 100%;
@@ -36,7 +34,6 @@ header {
   left: 0;
   background-color: #fbeacc;
   box-shadow: -1px 15px 11px 2px rgba(0, 0, 0, 0.48);
- 
 }
 .nav {
   width: 60%;
@@ -47,7 +44,7 @@ header {
 .mainContent {
   width: 100%;
   /* height: 100vh; */
-  background-image: url("https://cdn5.vectorstock.com/i/1000x1000/82/09/fast-food-menu-set-of-cartoon-background-vector-10208209.jpg");
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/vprojectold1-ning-0316_2.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=fa5b4e857d3703ab5058954e58f96315");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -71,6 +68,21 @@ header {
   border: 4px #fbeacc;
 }
 
+.imgHolderV {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    gap: 50px;
+    align-items: center;
+    margin-top: 80px;
+    /* padding-top: 10px; */
+    padding-top: 60px;
+    padding-bottom: 20px;
+    border: 4px #fbeacc;
+  }
+
 .div1 {
   align-items: center;
   width: 30%;
@@ -81,93 +93,93 @@ header {
   /* margin: 5px; */
   text-align: center;
   border: 5px solid #e35154;
+  border-radius: 30px;
   /* flex-direction: column; */
   /* height: 150px; */
 }
 
 #searchIng {
   margin: auto;
-
   display: flex;
   justify-content: center;
   font-size: 3rem;
- 
+  border-radius: 10px;
 }
 #searchIngDev {
   padding-top: 20px;
   /* size: 2rem; */
 }
 
-
 .div1 > img {
-
-
-display:flex;
-flex-wrap: wrap;
-margin: auto;
-align-items: center;
-width: 80%;
-
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  width: 80%;
+ 
 }
 
 .div1:hover {
-
-/* width: 32%; */
-
+  /* width: 32%; */
 }
 
 #addBtn {
+  font-size: 4.5rem;
+  border: 1px solid #fbeacc;
+}
+#hideNewBtn{
+
     font-size: 4.5rem;
-    border: 1px solid #fbeacc;
+  border: 1px solid #fbeacc;
+  display: none;
+
 }
 
 .hideDiv {
-    display: none;
-}
-#infoImg {
- 
-   width: 100%;
-   border: 1px solid #fbeacc;
-   /* background-color:#fbeacc ; */
+  display: none;
+  font-size: 1.5rem;
 
+}
+.hideDiv > input {
+
+    display: block;
+    padding-bottom: 5px;
+}
+
+#infoImg {
+  width: 35%;
+  border: 1px solid #fbeacc;
+  border-radius: 20px;
+  /* background-color:#fbeacc ; */
 }
 
 .infoDev {
- width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 100px;
-    
-    
-    
-
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 100px;
 }
-.h1Info{
- 
-   
-    display: inline;
-    background-color:#fbeacc ;
-    border: 3px solid #e35154;
-    color: rgb(43, 43, 43);
-    width: 50%;
-    padding: auto;
-
+.h1Info {
+  display: inline;
+  background-color: #fbeacc;
+  border: 3px solid #e35154;
+  color: rgb(43, 43, 43);
+  width: 50%;
+  padding: auto;
 }
-.infoPar{
-    background-color:#fbeacc ;
-    border: 3px solid #e35154;
-    display: inline-block;
-    color: rgb(43, 43, 43);
-    width: 50%;
-    font-size: 2.5rem;
-    padding: auto;
-
+.infoPar {
+  background-color: #fbeacc;
+  border: 3px solid #e35154;
+  display: inline-block;
+  color: rgb(43, 43, 43);
+  width: 50%;
+  font-size: 2.5rem;
+  padding: auto;
 }
 
 .extraImg {
-
-    width: 90%;
+  width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -175,11 +187,24 @@ width: 80%;
   gap: 50px;
   align-items: center;
   padding-bottom: 10px;
+  
 }
 
 .extraImg > img {
+  width: 30%;
+  height: 300px;
+  border: 3px solid #e35154;
+  border-radius: 20px;
+}
 
-width: 30%;
-height: 40%;
+#empty-fav{
+text-align: center;
+    margin: auto;
+font-size: 3rem;
 border: 3px solid #e35154;
+background-color: #fbeacc;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+border-radius: 30px;
+padding: auto;
 }
