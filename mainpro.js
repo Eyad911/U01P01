@@ -2,6 +2,7 @@
 
 const foodList = JSON.parse(localStorage.getItem("arr")) || [
   {
+      id:0,
     name: "KFC",
     discription: "FastFood",
     imgUrl: `https://www.dgwgo.com/wp-content/uploads/2021/07/kfc-logo.png`,
@@ -17,6 +18,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     fav: false,
   },
   {
+    id:1,
     name: "MacdonaldFC",
     discription: "FastFood",
     imgUrl: `https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/McDonald%27s_logo.svg/220px-McDonald%27s_logo.svg.png`,
@@ -30,6 +32,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     fav: false,
   },
   {
+    id:2,
     name: "Hardees",
     discription: "FastFood",
     imgUrl: `https://www.reddevelopment.com/jefferson-pointe/wp-content/uploads/sites/15/2020/08/7h_28129.png`,
@@ -42,6 +45,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     fav: false,
   },
   {
+    id:3,
     name: "Burger King",
     discription: "FastFood",
     imgUrl: `https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/User_BK_Logo.svg/1200px-User_BK_Logo.svg.png`,
@@ -54,6 +58,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     fav: false,
   },
   {
+    id:4,
     name: "dominos",
     discription: "FastFood",
     imgUrl: `https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/1200px-Dominos_pizza_logo.svg.png`,
@@ -67,12 +72,36 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
   },
 ];
 
-
-const deleteItem = (index) => {
-  //  console.log(index);
-  foodList.splice(index, 1);
-  render();
+// Search Bar
+const selectElement = (selector) => {
+  return $(selector);
 };
+
+const getResults = () => {
+  const search = selectElement(`#searchIng`).val();
+
+  for (let i = 0; i < foodList.length; i++) {
+    if (
+      foodList[i].name.toLowerCase().includes(search.toLowerCase())
+    ) {
+        selectElement(".searchDiv").html(`  <div> 
+        <span> ${foodList[i].name}  </span>  
+        <span> ${foodList[i].discription}  </span>  
+        <span> ${foodList[i].imgUrl}  </span>  
+        </div>  `)
+     
+    }
+
+    
+  }
+  
+};
+
+// const deleteItem = (index) => {
+//   //  console.log(index);
+//   foodList.splice(index, 1);
+//   render();
+// };
 
 // const favoriteF = (index) => {
 //   favo = foodList.filter((item) => {
@@ -85,16 +114,15 @@ const deleteItem = (index) => {
 // };
 
 const triggerFav = (i) => {
-    // console.log("like");
-//   let arr = JSON.parse(localStorage.getItem("fav"));
-//   arr.push(foodList[i]);
-//   localStorage.setItem("fav", JSON.stringify(arr));
-//   $(`#favBtn-` + i).hide();
-//   $(`#unfavBtn-` + i).show();
-foodList[i].fav = !foodList[i].fav
-localStorage.setItem("arr",JSON.stringify(foodList))
-render()
-
+  // console.log("like");
+  //   let arr = JSON.parse(localStorage.getItem("fav"));
+  //   arr.push(foodList[i]);
+  //   localStorage.setItem("fav", JSON.stringify(arr));
+  //   $(`#favBtn-` + i).hide();
+  //   $(`#unfavBtn-` + i).show();
+  foodList[i].fav = !foodList[i].fav;
+  localStorage.setItem("arr", JSON.stringify(foodList));
+  render();
 };
 
 // const triggerunFav = (i) => {
@@ -135,18 +163,16 @@ const render = () => {
         <img
           src="${item.imgUrl}" id= "info-${i}"
           alt="" style="height: 200px;"
-        /> <button class='btn btn-danger' id='removeBtn-${i}'> Remove </button>
+        /> 
         <button class='btn btn-success' id='favBtn-${i}'> Like </button>
         
       </div>  `);
-      if (item.fav){
-          $("#favBtn-"+i).text("unlike")
-          $("#favBtn-"+i).addClass('btn-warning')
-      }
+    if (item.fav) {
+      $("#favBtn-" + i).text("unlike");
+      $("#favBtn-" + i).addClass("btn-warning");
+    }
 
-    $("#removeBtn-" + i).click(() => {
-      deleteItem(i);
-    });
+    
     $(`#info-` + i).click(() => {
       itemInfo(i);
     });
@@ -154,8 +180,6 @@ const render = () => {
     $(`#favBtn-` + i).click(() => {
       triggerFav(i);
     });
-
-    
   });
   // نهاية اللوب
 };
@@ -164,18 +188,13 @@ const showInput = () => {
   $(".hideDiv").show();
   $(`#hideNewBtn`).show();
   $(`#addBtn`).hide();
-
-
-
 };
 
-const hideInput = ()=> {
-    $(".hideDiv").hide();
-    $(`#addBtn`).show();
-    $(`#hideNewBtn`).hide();
-
-
-}
+const hideInput = () => {
+  $(".hideDiv").hide();
+  $(`#addBtn`).show();
+  $(`#hideNewBtn`).hide();
+};
 
 const addNewItem = () => {
   const inpName = $(`#inpName`).val();
@@ -196,4 +215,4 @@ $(`#addBtn`).click(showInput);
 $(`#hideNewBtn`).click(hideInput);
 
 $(`#addNewBtn`).click(addNewItem);
-$(`#favoNavBar`).click(favoriteF);
+// $(`#favoNavBar`).click(favoriteF);

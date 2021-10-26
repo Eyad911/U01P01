@@ -1,10 +1,8 @@
 
 
-let favArray = JSON.parse(localStorage.getItem("arr"))
+let mainArray = JSON.parse(localStorage.getItem("arr"))
 
-favArray= favArray.filter((item)=>{
-    return  item.fav
-})
+let favArray = []
 
 
 // const triggerFav = (i) => {
@@ -28,7 +26,18 @@ favArray= favArray.filter((item)=>{
 // };
 
 
+
+
+
+
 const render = () => {
+    
+     favArray= mainArray.filter((item)=>{
+        return  item.fav
+    })
+    console.log("favArray",favArray);
+    console.log("mainArray",mainArray);
+
     $(".imgHolderV").html("");
     favArray.forEach((item, i) => {
       $(".imgHolderV").append(` <div class="div1" ">
@@ -37,18 +46,17 @@ const render = () => {
           <img
             src="${item.imgUrl}" id= "info-${i}"
             alt="" style="height: 200px;"
-          /> <button class='btn btn-danger' id='removeBtn-${i}'> Remove </button>
+          /> 
           <button class='btn btn-success' id='favBtn-${i}'> Like </button>
-          <button class='btn btn-warning' id='unfavBtn-${i}'> UnLike </button>
+          
         </div>  `);
-
-
+        if (item.fav) {
+            $("#favBtn-" + i).text("unlike");
+            $("#favBtn-" + i).addClass("btn-warning");
+          }
 
         
-  
-      $("#removeBtn-" + i).click(() => {
-        deleteItem(i);
-      });
+
       $(`#info-` + i).click(() => {
         itemInfo(i);
       });
@@ -57,10 +65,8 @@ const render = () => {
         triggerFav(i);
       });
   
-      $(`#unfavBtn-` + i).click(() => {
-          triggerunFav(i);
-      });
-      $(`#favBtn-` + i).hide();
+      
+    //   $(`#favBtn-` + i).hide();
     });
     // نهاية اللوب
     if (favArray.length=== 0) {
@@ -79,3 +85,23 @@ const render = () => {
 
 
 
+  const triggerFav = (i) => {
+    mainArray= mainArray.map((item)=>{
+        if(item.id === favArray[i].id){
+            return {...item, fav:false}
+        }else{
+            return item
+        }
+        
+    })
+
+    localStorage.setItem("arr",JSON.stringify(mainArray))
+
+
+    render()
+
+
+
+    
+
+  };

@@ -28,7 +28,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  /* z-index: 2; */
   position: absolute;
   top: 0;
   left: 0;
@@ -51,6 +51,7 @@ header {
   background-color: black;
   opacity: 0.8;
   margin-top: 150px;
+  z-index: 1;
 }
 
 .imgHolder {
@@ -63,9 +64,10 @@ header {
   align-items: center;
   margin-top: 80px;
   /* padding-top: 10px; */
-
   padding-bottom: 20px;
   border: 4px #fbeacc;
+  z-index: -2;
+  
 }
 
 .imgHolderV {
@@ -81,6 +83,22 @@ header {
     padding-top: 60px;
     padding-bottom: 20px;
     border: 4px #fbeacc;
+    min-height: 650px;
+  }
+
+  .ContactUsDiv{
+    min-height: 650px;
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   color: white;
+  
+  }
+
+  .ContactUsDiv > h1 {
+    
+    border: 4px #fbeacc;
+
   }
 
 .div1 {
@@ -94,6 +112,9 @@ header {
   text-align: center;
   border: 5px solid #e35154;
   border-radius: 30px;
+  opacity: 1.5;
+
+   transition: 1s;
   /* flex-direction: column; */
   /* height: 150px; */
 }
@@ -116,11 +137,13 @@ header {
   margin: auto;
   align-items: center;
   width: 80%;
+  cursor: pointer;
  
 }
 
 .div1:hover {
-  /* width: 32%; */
+    transform: scale(1.1);
+    
 }
 
 #addBtn {
@@ -136,47 +159,60 @@ header {
 }
 
 .hideDiv {
+    
   display: none;
   font-size: 1.5rem;
 
+
 }
 .hideDiv > input {
-
-    display: block;
+   
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
     padding-bottom: 5px;
 }
 
 #infoImg {
   width: 35%;
+  height: 350px;
   border: 1px solid #fbeacc;
   border-radius: 20px;
   /* background-color:#fbeacc ; */
 }
 
 .infoDev {
+    
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 100px;
+  transition: 1s;
 }
 .h1Info {
+    
   display: inline;
-  background-color: #fbeacc;
+  /* background-color: #fbeacc; */
   border: 3px solid #e35154;
-  color: rgb(43, 43, 43);
-  width: 50%;
+  color: rgb(255, 255, 255);
+  width: 80%;
   padding: auto;
+  opacity: 2;
+  
 }
 .infoPar {
-  background-color: #fbeacc;
+  /* background-color: #fbeacc; */
   border: 3px solid #e35154;
   display: inline-block;
-  color: rgb(43, 43, 43);
-  width: 50%;
+  color: rgb(255, 255, 255);
+  width: 90%;
   font-size: 2.5rem;
   padding: auto;
+ 
 }
+
 
 .extraImg {
   width: 90%;
@@ -188,13 +224,21 @@ header {
   align-items: center;
   padding-bottom: 10px;
   
+  
 }
 
 .extraImg > img {
+    margin-top: 30px;
+    margin-bottom: 20px;
   width: 30%;
   height: 300px;
   border: 3px solid #e35154;
   border-radius: 20px;
+  transition: 1s;
+}
+.extraImg > img:hover{
+    transform: scale(1.1);
+    
 }
 
 #empty-fav{
@@ -207,4 +251,41 @@ color: black;
 font-family: Arial, Helvetica, sans-serif;
 border-radius: 30px;
 padding: auto;
+padding-left: 10px;
+padding-right: 10px;
+opacity: 0.9;
 }
+
+#twittpic{
+     width: 70px;
+     /* margin-bottom: 25px; */
+     padding-bottom: 40px;
+     margin-top: 10px;
+}
+#twitth1{
+    display: inline;
+    margin-left: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: 60px;
+    color: black;
+}
+
+ 
+
+span{
+
+display: flex;
+padding-left: 10px;
+padding-right: 10px;
+flex-direction: column;
+border: 4px solid #e35154;
+border-radius: 20px;
+background-color: #fbeacc;
+opacity: 0.9;
+}
+
+
+@media only screen and (max-width: 600px) {
+   
+  }
