@@ -34,13 +34,13 @@
       <div class="mainContent">
         <div>
           <div id="searchIngDev">
-            <input type="search" placeholder="Search" id="searchIng" />
+            <input type="search" placeholder="Search" id="searchIng" name="searchinp" oninput="render(this.value)" />
             <button class="btn btn-success" id="addBtn">+</button>
             <button class="btn btn-danger" id="hideNewBtn">-</button>
             <div class="hideDiv">
-              <input type="text" id="inpName" placeholder="Name" />
-              <input type="text" id="inpDisc" placeholder="Discription" />
-              <input type="text" id="inpUrl" placeholder="Img URL" />
+              <input type="text" id="inpName" placeholder="Name" required />
+              <input type="text" id="inpDisc" placeholder="Discription" required />
+              <input type="text" id="inpUrl" placeholder="Img URL" required/>
               <button id ="addNewBtn" class="btn btn-info">Add</button>
             </div>
           </div>

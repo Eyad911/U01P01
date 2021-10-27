@@ -125,6 +125,7 @@ header {
   justify-content: center;
   font-size: 3rem;
   border-radius: 10px;
+  text-align: center;
 }
 #searchIngDev {
   padding-top: 20px;
@@ -286,6 +287,62 @@ opacity: 0.9;
 }
 
 
-@media only screen and (max-width: 600px) {
-   
+@media only screen and (max-width: 375px) {
+ 
+     ul{
+         width: 100%;
+       
+     }
+    li {
+        display: inline-block;
+        gap: 10px;
+        font-size: 1.2rem;
+      }
+
+      .nav{
+
+        width: 100%;
+      }
+
+      .div1{
+
+        width: 100%;
+      }
+
+      li > img {
+          width: 90px;
+      }
+      #twitth1{
+          font-size: 50px;
+      }
+      .h1Info {
+          display: inline-block;
+          text-align: center;
+          margin-left: 35px;
+      }
+      .infoDev {
+          display: block;
+      }
+
+      #infoImg {
+    margin-left: 35px;
+        width: 80%;
+      }
+
+      .infoPar {
+
+        /* display: inline-block; */
+          text-align: center;
+          margin-left: 18px;
+      }
+
+      .extraImg > img {
+
+        width: 100%;
+      }
+      #addBtn {
+
+        margin-top: 20px;
+      }
+
   }

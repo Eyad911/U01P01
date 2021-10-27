@@ -2,7 +2,7 @@
 
 const foodList = JSON.parse(localStorage.getItem("arr")) || [
   {
-      id:0,
+    id: 0,
     name: "KFC",
     discription: "FastFood",
     imgUrl: `https://www.dgwgo.com/wp-content/uploads/2021/07/kfc-logo.png`,
@@ -18,7 +18,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     fav: false,
   },
   {
-    id:1,
+    id: 1,
     name: "MacdonaldFC",
     discription: "FastFood",
     imgUrl: `https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/McDonald%27s_logo.svg/220px-McDonald%27s_logo.svg.png`,
@@ -32,7 +32,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     fav: false,
   },
   {
-    id:2,
+    id: 2,
     name: "Hardees",
     discription: "FastFood",
     imgUrl: `https://www.reddevelopment.com/jefferson-pointe/wp-content/uploads/sites/15/2020/08/7h_28129.png`,
@@ -45,7 +45,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     fav: false,
   },
   {
-    id:3,
+    id: 3,
     name: "Burger King",
     discription: "FastFood",
     imgUrl: `https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/User_BK_Logo.svg/1200px-User_BK_Logo.svg.png`,
@@ -58,9 +58,9 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     fav: false,
   },
   {
-    id:4,
+    id: 4,
     name: "dominos",
-    discription: "FastFood",
+    discription: "Pizza",
     imgUrl: `https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/1200px-Dominos_pizza_logo.svg.png`,
     discriptionFull: ` Founded in 1960, Domino's is the recognized world leader in pizza delivery operating a network of company-owned and franchise-owned stores in the United States and international markets. Domino's is a company of exceptional people on a mission to be the best pizza delivery company in the world. Like most corporate success stories, Domino's started out small – with just one store in 1960. However, in 1978 the 200th Domino's store opened, and things really began to cook. By 1983 there were 1,000 Domino's stores and 5,000 in 1989. Today, there are over 18,000 stores – including more than 11,000 outside the United States. Sure, it took more than 50 years to get here, but the trip was well worth it. Feel free to take the journey yourself. Order a hot, Domino's Pizza for delivery to your door and make your family's dinner the best they have ever had.`,
     extraimg: [
@@ -73,29 +73,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
 ];
 
 // Search Bar
-const selectElement = (selector) => {
-  return $(selector);
-};
 
-const getResults = () => {
-  const search = selectElement(`#searchIng`).val();
-
-  for (let i = 0; i < foodList.length; i++) {
-    if (
-      foodList[i].name.toLowerCase().includes(search.toLowerCase())
-    ) {
-        selectElement(".searchDiv").html(`  <div> 
-        <span> ${foodList[i].name}  </span>  
-        <span> ${foodList[i].discription}  </span>  
-        <span> ${foodList[i].imgUrl}  </span>  
-        </div>  `)
-     
-    }
-
-    
-  }
-  
-};
 
 // const deleteItem = (index) => {
 //   //  console.log(index);
@@ -154,10 +132,13 @@ const itemInfo = (i) => {
   });
 };
 
-const render = () => {
-  $(".imgHolder").html("");
-  foodList.forEach((item, i) => {
-    $(".imgHolder").append(` <div class="div1" ">
+const render = (searchinp) => {
+  if (searchinp) {
+    $(".imgHolder").html("");
+
+    foodList.forEach((item, i) => {
+      if (item.name.toLowerCase().includes(searchinp)) {
+        $(".imgHolder").append(` <div class="div1" ">
         <h1>${item.name}</h1>
         <p>${item.discription}</p>
         <img
@@ -167,12 +148,38 @@ const render = () => {
         <button class='btn btn-success' id='favBtn-${i}'> Like </button>
         
       </div>  `);
+        if (item.fav) {
+          $("#favBtn-" + i).text("unlike");
+          $("#favBtn-" + i).addClass("btn-warning");
+        }
+
+        $(`#info-` + i).click(() => {
+          itemInfo(i);
+        });
+
+        $(`#favBtn-` + i).click(() => {
+          triggerFav(i);
+        });
+      }
+    });
+  } else {
+    $(".imgHolder").html("");
+    foodList.forEach((item, i) => {
+    $(".imgHolder").append(` <div class="div1" ">
+    <h1>${item.name}</h1>
+    <p>${item.discription}</p>
+    <img
+      src="${item.imgUrl}" id= "info-${i}"
+      alt="" style="height: 200px;"
+    /> 
+    <button class='btn btn-success' id='favBtn-${i}'> Like </button>
+    
+  </div>  `);
     if (item.fav) {
       $("#favBtn-" + i).text("unlike");
       $("#favBtn-" + i).addClass("btn-warning");
     }
 
-    
     $(`#info-` + i).click(() => {
       itemInfo(i);
     });
@@ -180,7 +187,10 @@ const render = () => {
     $(`#favBtn-` + i).click(() => {
       triggerFav(i);
     });
-  });
+  
+});
+
+  }
   // نهاية اللوب
 };
 
