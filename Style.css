@@ -198,21 +198,29 @@ header {
     
   display: inline;
   /* background-color: #fbeacc; */
-  border: 3px solid #e35154;
+  border: 1px solid #e35154;
   color: rgb(255, 255, 255);
   width: 80%;
-  padding: auto;
-  opacity: 2;
+  padding: 10px;
+ 
+  text-align: justify;
+  background-color: black;
+border-radius: 10px;
+  opacity: 0.8;
   
 }
 .infoPar {
   /* background-color: #fbeacc; */
-  border: 3px solid #e35154;
+  border: 1px solid #e35154;
   display: inline-block;
   color: rgb(255, 255, 255);
   width: 90%;
   font-size: 2.5rem;
-  padding: auto;
+  padding: 10px;
+  text-align: justify;
+  background-color: black;
+border-radius: 10px;
+  opacity: 0.8;
  
 }
 

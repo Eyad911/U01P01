@@ -70,6 +70,19 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
     ],
     fav: false,
   },
+  {
+    id: 5,
+    name: "Kudu",
+    discription: "FastFood",
+    imgUrl: `https://prod-wafy-api.s3.eu-central-1.amazonaws.com/images/places/67545/191/20171204195340/3912.jpg`,
+    discriptionFull: ` Founded in 1960, Domino's is the recognized world leader in pizza delivery operating a network of company-owned and franchise-owned stores in the United States and international markets. Domino's is a company of exceptional people on a mission to be the best pizza delivery company in the world. Like most corporate success stories, Domino's started out small – with just one store in 1960. However, in 1978 the 200th Domino's store opened, and things really began to cook. By 1983 there were 1,000 Domino's stores and 5,000 in 1989. Today, there are over 18,000 stores – including more than 11,000 outside the United States. Sure, it took more than 50 years to get here, but the trip was well worth it. Feel free to take the journey yourself. Order a hot, Domino's Pizza for delivery to your door and make your family's dinner the best they have ever had.`,
+    extraimg: [
+      "https://diginomica.com/sites/default/files/images/2017-05/dominos.jpg",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/domino-s-thechick-ain-t-vegannuggets1-1608288780.jpg",
+      "https://www.totallyveganbuzz.com/wp-content/uploads/2020/01/Dominos-Vegan-pizza_TotallyVeganBuzz-1280x720.jpg",
+    ],
+    fav: false,
+  },
 ];
 
 // Search Bar
