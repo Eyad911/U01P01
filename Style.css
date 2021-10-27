@@ -52,6 +52,7 @@ header {
   opacity: 0.8;
   margin-top: 150px;
   z-index: 1;
+  min-height: 650px;
 }
 
 .imgHolder {
@@ -67,6 +68,7 @@ header {
   padding-bottom: 20px;
   border: 4px #fbeacc;
   z-index: -2;
+
   
 }
 
