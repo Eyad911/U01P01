@@ -59,7 +59,7 @@ const foodList = JSON.parse(localStorage.getItem("arr")) || [
   },
   {
     id: 4,
-    name: "dominos",
+    name: "Dominos",
     discription: "Pizza",
     imgUrl: `https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/1200px-Dominos_pizza_logo.svg.png`,
     discriptionFull: ` Founded in 1960, Domino's is the recognized world leader in pizza delivery operating a network of company-owned and franchise-owned stores in the United States and international markets. Domino's is a company of exceptional people on a mission to be the best pizza delivery company in the world. Like most corporate success stories, Domino's started out small – with just one store in 1960. However, in 1978 the 200th Domino's store opened, and things really began to cook. By 1983 there were 1,000 Domino's stores and 5,000 in 1989. Today, there are over 18,000 stores – including more than 11,000 outside the United States. Sure, it took more than 50 years to get here, but the trip was well worth it. Feel free to take the journey yourself. Order a hot, Domino's Pizza for delivery to your door and make your family's dinner the best they have ever had.`,
@@ -172,12 +172,16 @@ const render = (searchinp) => {
       src="${item.imgUrl}" id= "info-${i}"
       alt="" style="height: 200px;"
     /> 
-    <button class='btn btn-success' id='favBtn-${i}'> Like </button>
+    <button class='btn btn-success' id='favBtn-${i}'> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+  </svg> </button>
     
   </div>  `);
     if (item.fav) {
+        
       $("#favBtn-" + i).text("unlike");
       $("#favBtn-" + i).addClass("btn-warning");
+      
     }
 
     $(`#info-` + i).click(() => {
@@ -195,13 +199,15 @@ const render = (searchinp) => {
 };
 
 const showInput = () => {
-  $(".hideDiv").show();
+    $(".hideDiv").slideDown(1000);
+//   $(".hideDiv").show();
   $(`#hideNewBtn`).show();
   $(`#addBtn`).hide();
 };
 
 const hideInput = () => {
-  $(".hideDiv").hide();
+    $(".hideDiv").slideUp(1000);
+//   $(".hideDiv").hide();
   $(`#addBtn`).show();
   $(`#hideNewBtn`).hide();
 };

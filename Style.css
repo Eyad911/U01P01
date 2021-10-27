@@ -148,12 +148,12 @@ header {
 }
 
 #addBtn {
-  font-size: 4.5rem;
+  font-size: 4rem;
   border: 1px solid #fbeacc;
 }
 #hideNewBtn{
 
-    font-size: 4.5rem;
+    font-size: 4rem;
   border: 1px solid #fbeacc;
   display: none;
 
@@ -287,7 +287,12 @@ opacity: 0.9;
 }
 
 
+
+      /*-------------------------------------------------IphoneX-------------------------------------------------------------*/
+
 @media only screen and (max-width: 375px) {
+
+   
  
      ul{
          width: 100%;
@@ -344,5 +349,10 @@ opacity: 0.9;
 
         margin-top: 20px;
       }
+      #hideNewBtn{
+
+        margin-top: 20px;
+      }
+
 
   }
