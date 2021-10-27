@@ -71,7 +71,7 @@ const render = () => {
     // نهاية اللوب
     if (favArray.length=== 0) {
 
-        $(".imgHolderV").append(`<div id='empty-fav'>  <h1>Opps </h1> <br><p>You have not added any item to Favorite List</p> </div>`)
+        $(".imgHolderV").append(`<div id='empty-fav'>  <h1>Opps </h1> <br><p>You have not added any item to Favorite List</p> </div>`);
         
     }
 };
@@ -90,15 +90,15 @@ const render = () => {
         if(item.id === favArray[i].id){
             return {...item, fav:false}
         }else{
-            return item
+            return item;
         }
         
     })
 
-    localStorage.setItem("arr",JSON.stringify(mainArray))
+    localStorage.setItem("arr",JSON.stringify(mainArray));
 
 
-    render()
+    render();
 
 
 
