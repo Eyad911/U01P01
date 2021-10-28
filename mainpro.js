@@ -150,7 +150,7 @@ const render = (searchinp) => {
     $(".imgHolder").html("");
 
     foodList.forEach((item, i) => {
-      if (item.name.toLowerCase().includes(searchinp)) {
+      if (item.name.toLowerCase().includes(searchinp.toLowerCase())) {
         $(".imgHolder").append(` <div class="div1" ">
         <h1>${item.name}</h1>
         <p>${item.discription}</p>
